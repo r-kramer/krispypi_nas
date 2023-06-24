@@ -10,6 +10,8 @@ set -u
 Help()
 {
     echo "List available drives: sudo fdisk -l"
+    echo "List drive partition: sudo fdisk <drive>"
+    echo "Delete any existing partitions, if necessary"
     echo "Using this script: sudo $0 <drive>"
 }
 
