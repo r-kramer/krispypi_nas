@@ -19,8 +19,13 @@ if [ "$#" -eq  "0" ]; then
     exit 1
 fi
 
+# Check if mount dir exists
+if [ ! -d "/mnt/usb" ]; then
+    # Create mount dir if empty
+    mkdir /mnt/usb
+fi
+
 # Create the mount point
 drive="$1"
-mkdir /mnt/usb
-mount "${drive}" /mnt/usb -o uid=pi,gid=pi
+mount "${drive}" /mnt/usb
 echo "USB drive mounted successfully"
